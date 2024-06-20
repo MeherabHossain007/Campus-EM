@@ -17,7 +17,7 @@ function NavBar() {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a href="/home2">Home</a>
+            <a href="/dashboard">Home</a>
           </li>
           <li>
             <a href="/instructor">Events</a>
@@ -31,7 +31,7 @@ function NavBar() {
         </ul>
       </div>
       <div className="flex-none">
-        <button className="btn btn-primary mx-4">Register Event</button>
+        <button className="btn btn-primary mx-4">Create Event</button>
         <button className="btn btn-outline btn-secondary mr-10">
           My Events
         </button>
