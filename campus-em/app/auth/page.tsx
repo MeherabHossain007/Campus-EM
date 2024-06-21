@@ -116,7 +116,7 @@ function LoginForm({ onToggleForm }: { onToggleForm: () => void }) {
             </label>
           </div>
           <Link
-            href={"/dashboard"}
+            href={role === "Admin" ? "/admin" : "/dashboard"}
             type="submit"
             className="inline-flex items-center px-4 py-2 text-xs font-semibold rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           >
