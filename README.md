@@ -7,6 +7,11 @@ First, go to the root folder
 ```bash
 cd campus-em
 ```
+```bash
+npm I
+#or
+yarn
+```
 
 Secound, run the development server:
 
