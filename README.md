@@ -8,7 +8,7 @@ First, go to the root folder
 cd campus-em
 ```
 ```bash
-npm I
+npm i
 #or
 yarn
 ```
