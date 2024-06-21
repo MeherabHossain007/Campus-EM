@@ -510,10 +510,11 @@ const Settings: React.FC = () => {
             />
           </label>
         </div>
-        <div className="mt-6">
+        <div className="mt-6 space-x-3">
           <button type="submit" className="btn btn-primary">
             Save Settings
           </button>
+          <a href="/" className="btn btn-outline btn-secondary">Logout</a>
         </div>
       </form>
     </motion.div>
