@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import Link from "next/link";
@@ -15,6 +16,8 @@ function NavBar() {
   return (
     <div data-theme="light" className="navbar bg-base-100 shadow-sm">
       <div className="flex-1 text-black">
+        <img className="mx-4" src="https://upload.wikimedia.org/wikipedia/en/thumb/e/e0/North_South_University_Monogram.svg/180px-North_South_University_Monogram.svg.png"
+        height={50} width={80}></img>
         <div>
           <div className="flex flex-col items-center justify-center space-y-4 font-bold text-4xl">
             CAMPUS
@@ -42,12 +45,12 @@ function NavBar() {
       </div>
       <div className="flex-none">
         <div>
-            <button
-              className="btn btn-primary mr-5"
-              onClick={() => setIsCreateModalOpen(true)}
-            >
-              Create New Event
-            </button>
+          <button
+            className="btn btn-primary mr-5"
+            onClick={() => setIsCreateModalOpen(true)}
+          >
+            Create New Event
+          </button>
 
           <CreateEventModal
             isOpen={isCreateModalOpen}
@@ -55,7 +58,10 @@ function NavBar() {
             onSubmit={handleCreateEvent}
           />
         </div>
-        <Link className="btn btn-outline btn-secondary mr-10" href={"/events/myevents"}>
+        <Link
+          className="btn btn-outline btn-secondary mr-10"
+          href={"/events/myevents"}
+        >
           My Events
         </Link>
         <div className="dropdown dropdown-end">
