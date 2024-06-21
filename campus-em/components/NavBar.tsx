@@ -1,10 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+"use client";
+import Link from "next/link";
+import React, { useState } from "react";
+import CreateEventModal from "./EventModal";
 
 function NavBar() {
+  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+
+  const handleCreateEvent = (eventData: any) => {
+    // Implement logic to create a new event
+    console.log("New event data:", eventData);
+    // You would typically send this data to your backend API
+  };
   return (
-    <div className="navbar bg-base-100 shadow-sm">
-      <div className="flex-1">
+    <div data-theme="light" className="navbar bg-base-100 shadow-sm">
+      <div className="flex-1 text-black">
         <div>
           <div className="flex flex-col items-center justify-center space-y-4 font-bold text-4xl">
             CAMPUS
@@ -20,7 +30,7 @@ function NavBar() {
             <a href="/dashboard">Home</a>
           </li>
           <li>
-            <a href="/instructor">Events</a>
+            <a href="/events">Events</a>
           </li>
           <li>
             <a>About Us</a>
@@ -31,10 +41,23 @@ function NavBar() {
         </ul>
       </div>
       <div className="flex-none">
-        <button className="btn btn-primary mx-4">Create Event</button>
-        <button className="btn btn-outline btn-secondary mr-10">
+        <div>
+            <button
+              className="btn btn-primary mr-5"
+              onClick={() => setIsCreateModalOpen(true)}
+            >
+              Create New Event
+            </button>
+
+          <CreateEventModal
+            isOpen={isCreateModalOpen}
+            onClose={() => setIsCreateModalOpen(false)}
+            onSubmit={handleCreateEvent}
+          />
+        </div>
+        <Link className="btn btn-outline btn-secondary mr-10" href={"/events/myevents"}>
           My Events
-        </button>
+        </Link>
         <div className="dropdown dropdown-end">
           <div
             tabIndex={0}
