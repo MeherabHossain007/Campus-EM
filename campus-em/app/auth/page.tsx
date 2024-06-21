@@ -32,6 +32,7 @@ function LoginForm({ onToggleForm }: { onToggleForm: () => void }) {
     username: "",
     password: "",
   });
+  const[role, setRole] = useState("") // Add role state and setter
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -89,7 +90,7 @@ function LoginForm({ onToggleForm }: { onToggleForm: () => void }) {
             }
             required
           />
-          <select className="select w-full max-w-xs mt-8 shadow-sm">
+          <select className="select w-full max-w-xs mt-8 shadow-sm" onChange={(e) =>setRole(e.target.value)} value={role}>
             <option disabled selected>
               Pick your role
             </option>
